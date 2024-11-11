@@ -1,21 +1,27 @@
 <template>
   <div class="navigation-affix">
     <el-affix>
-      <el-image class="navigation_icon" :src="url" :fit="fit"/>
-      <el-anchor :offset="70" direction="horizontal">
-        <el-anchor-link :href="`#${locale['basic-usage']}`">
-          {{ locale['Basic Usage'] }}
+      <el-anchor direction="horizontal" :offset="50" type="underline">
+        <el-image class="navigation_icon" :src="url" :fit="fit"/>
+        <el-anchor-link href="#basic-usage">
+          Basic usage
         </el-anchor-link>
-        <el-anchor-link :href="`#${locale['horizontal-mode']}`">
-          {{ locale['Horizontal Mode'] }}
+        <el-anchor-link href="#scroll-to-anchor">
+          Scroll to anchor
         </el-anchor-link>
-        <el-anchor-link :href="`#${locale['scroll-container']}`">
-          {{ locale['Scroll Container'] }}
+        <el-anchor-link href="#static-anchor">
+          Static anchor
+        </el-anchor-link>
+        <el-anchor-link href="#custom-icon">
+          Custom icon
+        </el-anchor-link>
+        <el-anchor-link href="#custom-style">
+          Custom style
         </el-anchor-link>
       </el-anchor>
-
     </el-affix>
   </div>
+
 </template>
 
 <script setup>
@@ -30,15 +36,12 @@ const fit = ref('fill');
 .navigation-affix {
   width: 100%;
   height: 50px;
-  display: flex;
 
   .navigation_icon {
     height: 50px;
-
-    :deep(el-image__inner) {
-      height: 50px;
-    }
+  }
+  .el-anchor__item {
+    margin-top: 10px;
   }
 }
-
 </style>
